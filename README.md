@@ -1,7 +1,9 @@
 # WriteUps
 
 Public profiles:
-- https://tryhackme.com/p/mor88888888
+- [Tryhackme](https://tryhackme.com/p/mor88888888)
+- [CyberDefenders](https://cyberdefenders.org/p/mor8)
+- [Hackthebox](https://app.hackthebox.com/profile/703252)
 
 # THM
 
