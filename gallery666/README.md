@@ -174,19 +174,19 @@ $ dirsearch -u http://$ip/gallery/
 ### Interesting paths
 http://10.10.139.75/gallery/classes/
 
-![97bb36ac29aa944efa61ac5d8fcea09a.png](/_resources/97bb36ac29aa944efa61ac5d8fcea09a.png)
+![97bb36ac29aa944efa61ac5d8fcea09a.png](/gallery666/_resources/97bb36ac29aa944efa61ac5d8fcea09a.png)
 
 http://10.10.139.75/gallery/uploads/
 
-![712c4fe6b40661551d0fdc93884d636f.png](/_resources/712c4fe6b40661551d0fdc93884d636f.png)
+![712c4fe6b40661551d0fdc93884d636f.png](/gallery666/_resources/712c4fe6b40661551d0fdc93884d636f.png)
 
 http://10.10.139.75/gallery/create_account.php
 
-![fcd69eb8a49647b0c1ea164baa2ad7b3.png](/_resources/fcd69eb8a49647b0c1ea164baa2ad7b3.png)
+![fcd69eb8a49647b0c1ea164baa2ad7b3.png](/gallery666/_resources/fcd69eb8a49647b0c1ea164baa2ad7b3.png)
 
 http://10.10.139.75/gallery/report/
 
-![9c0870528dcb602900510f10751af6d1.png](/_resources/9c0870528dcb602900510f10751af6d1.png)
+![9c0870528dcb602900510f10751af6d1.png](/gallery666/_resources/9c0870528dcb602900510f10751af6d1.png)
 
 # Explotation
 
@@ -198,9 +198,9 @@ Based on https://www.exploit-db.com/exploits/50214 exploit for Simple Image Gall
 ## SQLi
 After that, I use the following explotation https://www.exploit-db.com/exploits/50198 and I run sqlmap to extract info from the DB:
 
-![14a581790e843bb0b1c5722395f5c4f3.png](/_resources/14a581790e843bb0b1c5722395f5c4f3.png)
+![14a581790e843bb0b1c5722395f5c4f3.png](/gallery666/_resources/14a581790e843bb0b1c5722395f5c4f3.png)
 
-![7b89e4d2042b906ee4a3436f7a6c89a6.png](/_resources/7b89e4d2042b906ee4a3436f7a6c89a6.png)
+![7b89e4d2042b906ee4a3436f7a6c89a6.png](/gallery666/_resources/7b89e4d2042b906ee4a3436f7a6c89a6.png)
 
 ```bash
 sqlmap -r Documents/gallery666/test.req --dbs
@@ -261,7 +261,7 @@ sqlmap -r Documents/gallery666/test.req --columns -T users --dump
 ```
 
 
-![e215fb195b6da5104468129680490b61.png](/_resources/e215fb195b6da5104468129680490b61.png)
+![e215fb195b6da5104468129680490b61.png](/gallery666/_resources/e215fb195b6da5104468129680490b61.png)
 
 **Admin hash**: a228b12a08b6527e7978cbe5d914531c
 *Note: it doesn't seem that can be cracked.*
@@ -269,22 +269,22 @@ sqlmap -r Documents/gallery666/test.req --columns -T users --dump
 ## Spawn a shell
 I see that I can upload files:
 
-![0911f4a9f71307264f5a877c393a9df2.png](/_resources/0911f4a9f71307264f5a877c393a9df2.png)
+![0911f4a9f71307264f5a877c393a9df2.png](/gallery666/_resources/0911f4a9f71307264f5a877c393a9df2.png)
 
 And I know where the files are saved:
 
-![f8f666bbf88c76534594edeb7f5c238c.png](/_resources/f8f666bbf88c76534594edeb7f5c238c.png)
+![f8f666bbf88c76534594edeb7f5c238c.png](/gallery666/_resources/f8f666bbf88c76534594edeb7f5c238c.png)
 http://10.10.24.152/gallery/uploads/user_1/filename
 
 So, I tried to upload a php file:
 
-![425a7cb185736eec8eae64a813ceb3a8.png](/_resources/425a7cb185736eec8eae64a813ceb3a8.png)
+![425a7cb185736eec8eae64a813ceb3a8.png](/gallery666/_resources/425a7cb185736eec8eae64a813ceb3a8.png)
 
 Finally, I upload a [php reverse shell](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php)  and I gain a shell:
 
-![ded4a5ee43357f3e2decad24509f0cff.png](/_resources/ded4a5ee43357f3e2decad24509f0cff.png)
+![ded4a5ee43357f3e2decad24509f0cff.png](/gallery666/_resources/ded4a5ee43357f3e2decad24509f0cff.png)
 
-![967b75aceac72371a6dea40889faf366.png](/_resources/967b75aceac72371a6dea40889faf366.png)
+![967b75aceac72371a6dea40889faf366.png](/gallery666/_resources/967b75aceac72371a6dea40889faf366.png)
 
 # Post-explotation
 We are **www-data**.
@@ -339,33 +339,33 @@ $ find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/nul
 ### Path enumeration
 Interesting path: /var/backups/mike_home_backup/
 
-![4758415e5a4ab4d61bb6815259992f51.png](/_resources/4758415e5a4ab4d61bb6815259992f51.png)
+![4758415e5a4ab4d61bb6815259992f51.png](/gallery666/_resources/4758415e5a4ab4d61bb6815259992f51.png)
 
-![4ba8abce75882db0deb4c306bd420c42.png](/_resources/4ba8abce75882db0deb4c306bd420c42.png)
+![4ba8abce75882db0deb4c306bd420c42.png](/gallery666/_resources/4ba8abce75882db0deb4c306bd420c42.png)
 
 ## User flag
 Inside of it, we have some files from mike home:
 
-![113e03c594ae706342ba1af09cf8d265.png](/_resources/113e03c594ae706342ba1af09cf8d265.png)
+![113e03c594ae706342ba1af09cf8d265.png](/gallery666/_resources/113e03c594ae706342ba1af09cf8d265.png)
 
 **.bash_history** usually has important information:
 
-![788bd5651a12caa987d7e45c0e77d451.png](/_resources/788bd5651a12caa987d7e45c0e77d451.png)
+![788bd5651a12caa987d7e45c0e77d451.png](/gallery666/_resources/788bd5651a12caa987d7e45c0e77d451.png)
 
 Yeah, it seems there is the mike password. After `su mike`and that password, we are logged as Mike:
 
-![4d7322fb3427abe902bb08a70bb54ba3.png](/_resources/4d7322fb3427abe902bb08a70bb54ba3.png)
+![4d7322fb3427abe902bb08a70bb54ba3.png](/gallery666/_resources/4d7322fb3427abe902bb08a70bb54ba3.png)
 
 The user flag:
 
-![020dc451d590d26273a2479f424e4098.png](/_resources/020dc451d590d26273a2479f424e4098.png)
+![020dc451d590d26273a2479f424e4098.png](/gallery666/_resources/020dc451d590d26273a2479f424e4098.png)
 
 ## Privilege escalation - root flag
 ```bash
 $ sudo -l
 ```
 
-![04310c6ab8260f77c228b82b51f327ce.png](/_resources/04310c6ab8260f77c228b82b51f327ce.png)
+![04310c6ab8260f77c228b82b51f327ce.png](/gallery666/_resources/04310c6ab8260f77c228b82b51f327ce.png)
 
 We can execute this command as root: `/bin/bash /opt/rootkit.sh`
 
@@ -418,8 +418,8 @@ I exit from nano and I execute the copy of bash - [GTFOBins ref](https://gtfobin
 ./custom_bash -p
 ```
 
-![e909f82c9f4cc91861f150d869ec0a58.png](/_resources/e909f82c9f4cc91861f150d869ec0a58.png)
+![e909f82c9f4cc91861f150d869ec0a58.png](/gallery666/_resources/e909f82c9f4cc91861f150d869ec0a58.png)
 
 The **root** flag:
 
-![1d64a4fbd84e64582f2fdccb0832baf9.png](/_resources/1d64a4fbd84e64582f2fdccb0832baf9.png)
+![1d64a4fbd84e64582f2fdccb0832baf9.png](/gallery666/_resources/1d64a4fbd84e64582f2fdccb0832baf9.png)
