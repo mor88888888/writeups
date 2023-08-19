@@ -274,6 +274,7 @@ I see that I can upload files:
 And I know where the files are saved:
 
 ![f8f666bbf88c76534594edeb7f5c238c.png](/gallery666/_resources/f8f666bbf88c76534594edeb7f5c238c.png)
+
 http://10.10.24.152/gallery/uploads/user_1/filename
 
 So, I tried to upload a php file:
