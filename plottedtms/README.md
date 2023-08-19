@@ -55,15 +55,15 @@ Nothing relevant
 ```
 Port 22:
 
-![a62933b55377eff5f919e6d0e16d393d.png](/THM/plottedtms/_resources/a62933b55377eff5f919e6d0e16d393d.png)
+![a62933b55377eff5f919e6d0e16d393d.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/a62933b55377eff5f919e6d0e16d393d.png)
 
 Port 80:
 
-![fecd4c695af9bbcab8fad6de325f5064.png](/THM/plottedtms/_resources/fecd4c695af9bbcab8fad6de325f5064.png)
+![fecd4c695af9bbcab8fad6de325f5064.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/fecd4c695af9bbcab8fad6de325f5064.png)
 
 Port 445:
 
-![2e5f0801ce144574e4a38b572b9d8015.png](/THM/plottedtms/_resources/2e5f0801ce144574e4a38b572b9d8015.png)
+![2e5f0801ce144574e4a38b572b9d8015.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/2e5f0801ce144574e4a38b572b9d8015.png)
 
 ## Dirsearch | Gobuster
 ```bash
@@ -104,13 +104,13 @@ Task Completed
 
 http://$ip/passwd
 
-![92f3e2e789bb53ea270d0a839ec46e3f.png](/THM/plottedtms/_resources/92f3e2e789bb53ea270d0a839ec46e3f.png)
+![92f3e2e789bb53ea270d0a839ec46e3f.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/92f3e2e789bb53ea270d0a839ec46e3f.png)
 
 bm90IHRoaXMgZWFzeSA6RA== --> (base64) not this easy :D
 
 http://$ip/admin/
 
-![5f191573a37fd995fb6c9cebc41de6a0.png](/THM/plottedtms/_resources/5f191573a37fd995fb6c9cebc41de6a0.png)
+![5f191573a37fd995fb6c9cebc41de6a0.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/5f191573a37fd995fb6c9cebc41de6a0.png)
 
 I save this file, I'm not sure what it is:
 ```bash
@@ -217,32 +217,32 @@ http://10.10.66.68:445/management/admin/login.php (see "Web Autentication")
 
 http://10.10.66.68:445/management/database/
 
-![b313bbe794ce559f28cd6358ac404c66.png](/THM/plottedtms/_resources/b313bbe794ce559f28cd6358ac404c66.png)
+![b313bbe794ce559f28cd6358ac404c66.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/b313bbe794ce559f28cd6358ac404c66.png)
 
 http://10.10.66.68:445/management/classes/
 
-![b669b4f20b088234f02a169ea618d7d8.png](/THM/plottedtms/_resources/b669b4f20b088234f02a169ea618d7d8.png)
+![b669b4f20b088234f02a169ea618d7d8.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/b669b4f20b088234f02a169ea618d7d8.png)
 
 http://10.10.66.68:445/management/inc/
 
-![f0dee4c168cb90abbea0ea9628d8c39c.png](/THM/plottedtms/_resources/f0dee4c168cb90abbea0ea9628d8c39c.png)
+![f0dee4c168cb90abbea0ea9628d8c39c.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/f0dee4c168cb90abbea0ea9628d8c39c.png)
 
 http://10.10.66.68:445/management/pages/
 
-![4e6b94e9a605f759765fa263c6ec454b.png](/THM/plottedtms/_resources/4e6b94e9a605f759765fa263c6ec454b.png)
+![4e6b94e9a605f759765fa263c6ec454b.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/4e6b94e9a605f759765fa263c6ec454b.png)
 
 # Explotation
 
 ## Web Autentication
 http://10.10.66.68:445/management/admin/login.php
 
-![e4a3bddd6273c55f2c6e921e9358cd97.png](/THM/plottedtms/_resources/e4a3bddd6273c55f2c6e921e9358cd97.png)
+![e4a3bddd6273c55f2c6e921e9358cd97.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/e4a3bddd6273c55f2c6e921e9358cd97.png)
 
 ## SQLi
 
 Bypass auth:
 
-![712bf6c3ad2e2bc332b8013b8cd82931.png](/THM/plottedtms/_resources/712bf6c3ad2e2bc332b8013b8cd82931.png)
+![712bf6c3ad2e2bc332b8013b8cd82931.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/712bf6c3ad2e2bc332b8013b8cd82931.png)
 
 ### sqlmap
 ```bash
@@ -311,7 +311,7 @@ Table: users
 
 This information is the same that I can see in **http://10.10.66.68:445/management/database/traffic_offense_db.sql** but now is confimed.
 
-![2db1633e9210ccc8b87768bc9a48f865.png](/THM/plottedtms/_resources/2db1633e9210ccc8b87768bc9a48f865.png)
+![2db1633e9210ccc8b87768bc9a48f865.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/2db1633e9210ccc8b87768bc9a48f865.png)
 
 Futhermore, looking for users from system:
 ```bash
@@ -327,38 +327,38 @@ After bypass the auth, I see in the portal that I can upload files to change the
 
 It seems that we can upload whatever:
 
-![a09085c8ce638a5787d81fa71309bcc4.png](/THM/plottedtms/_resources/a09085c8ce638a5787d81fa71309bcc4.png)
+![a09085c8ce638a5787d81fa71309bcc4.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/a09085c8ce638a5787d81fa71309bcc4.png)
 
 And it works:
 
-![1c9a0eb5fdace910435fa4e49cb2f33e.png](/THM/plottedtms/_resources/1c9a0eb5fdace910435fa4e49cb2f33e.png)
+![1c9a0eb5fdace910435fa4e49cb2f33e.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/1c9a0eb5fdace910435fa4e49cb2f33e.png)
 
 So let's upload a reverse shell (I used https://www.revshells.com/):
 
-![5204e92ddcb3134adbb5e7e290f73a68.png](/THM/plottedtms/_resources/5204e92ddcb3134adbb5e7e290f73a68.png)
+![5204e92ddcb3134adbb5e7e290f73a68.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/5204e92ddcb3134adbb5e7e290f73a68.png)
 
-![10b36063631078109150ccde56a2e1a4.png](/THM/plottedtms/_resources/10b36063631078109150ccde56a2e1a4.png)
+![10b36063631078109150ccde56a2e1a4.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/10b36063631078109150ccde56a2e1a4.png)
 
 # Post-explotation
 
 ## Linpeas
 
-![57ff18aacb3b658825123a0a6f7347e4.png](/THM/plottedtms/_resources/57ff18aacb3b658825123a0a6f7347e4.png)
+![57ff18aacb3b658825123a0a6f7347e4.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/57ff18aacb3b658825123a0a6f7347e4.png)
 
-![6d4be16d70b031fb7b943be7a0e46d4d.png](/THM/plottedtms/_resources/6d4be16d70b031fb7b943be7a0e46d4d.png)
+![6d4be16d70b031fb7b943be7a0e46d4d.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/6d4be16d70b031fb7b943be7a0e46d4d.png)
 
-![c08836605cb87584e8e35138099ba922.png](/THM/plottedtms/_resources/c08836605cb87584e8e35138099ba922.png)
+![c08836605cb87584e8e35138099ba922.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/c08836605cb87584e8e35138099ba922.png)
 
-![26061e9a996191d835d72e5c790cdd40.png](/THM/plottedtms/_resources/26061e9a996191d835d72e5c790cdd40.png)
+![26061e9a996191d835d72e5c790cdd40.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/26061e9a996191d835d72e5c790cdd40.png)
 
-![b761f3f50a9a4711cdcc6a78605c487c.png](/THM/plottedtms/_resources/b761f3f50a9a4711cdcc6a78605c487c.png)
+![b761f3f50a9a4711cdcc6a78605c487c.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/b761f3f50a9a4711cdcc6a78605c487c.png)
 
 --> 2021-10-25 15:04:12,950 DEBUG root:39 start: subiquity/Identity/POST: {"realname": "ubuntu", "username": "ubuntu", "crypted_password": "$6$R2W/.hj7...
 
 ## User flag
 Linpeas remark **backup.sh** as a script executed by a cron job. We can, at least, read it:
 
-![45adfcc01d02301302621f99d3fa3cd4.png](/THM/plottedtms/_resources/45adfcc01d02301302621f99d3fa3cd4.png)
+![45adfcc01d02301302621f99d3fa3cd4.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/45adfcc01d02301302621f99d3fa3cd4.png)
 
 We may cheat this script in order to execute some code or copy something to the plot_admin user, but:
 * the folder /var/www/html/management it doesn't exist and I can't create it due to permissions.
@@ -367,11 +367,11 @@ We may cheat this script in order to execute some code or copy something to the 
 
 Actually, it's easier than the previous techniques, because it seems that I can modify and delete the file due to the www-data permisions over the folder:
 
-![6bd4ea5366f4cf60f6403e7d2a3cf3e8.png](/THM/plottedtms/_resources/6bd4ea5366f4cf60f6403e7d2a3cf3e8.png)
+![6bd4ea5366f4cf60f6403e7d2a3cf3e8.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/6bd4ea5366f4cf60f6403e7d2a3cf3e8.png)
 
 So I put a reverse shell overwriting the file and wait for the cron job:
 
-![083fabb01707a858573905cc1f5a79b6.png](/THM/plottedtms/_resources/083fabb01707a858573905cc1f5a79b6.png)
+![083fabb01707a858573905cc1f5a79b6.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/083fabb01707a858573905cc1f5a79b6.png)
 
 With all permissions:
 ```bash
@@ -379,14 +379,14 @@ $ chmod 777 backup.sh
 ```
 And then I see that the user executing this cronjob is **plot_admin**, so we can read the **user.txt** flag in its home.
 
-![eef342a1bff0c647bf43b9fd42acdf76.png](/THM/plottedtms/_resources/eef342a1bff0c647bf43b9fd42acdf76.png)
+![eef342a1bff0c647bf43b9fd42acdf76.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/eef342a1bff0c647bf43b9fd42acdf76.png)
 
 In order to maintain **persistence** and improve the **shell**, I put my random public key in the .ssh/authored_keys and I connect to the server via ssh.
 
 ## Privilege escalation - root flag
 I relaunch the linpeas.sh script. The most important discovery is:
 
-![9a181be3c1b2e204eb7af551e09606ff.png](/THM/plottedtms/_resources/9a181be3c1b2e204eb7af551e09606ff.png)
+![9a181be3c1b2e204eb7af551e09606ff.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/9a181be3c1b2e204eb7af551e09606ff.png)
 
 So I can impersonate root with [doas](https://man.archlinux.org/man/doas.1.en) (similar to sudo) and the openssl binary.
 
@@ -407,4 +407,4 @@ permit nopass plot_admin as root cmd openssl
 permit nopass plot_admin as root cmd bash
 ```
 
-![d4ed6d566eb470baeeb8f89d011ce8cf.png](/THM/plottedtms/_resources/d4ed6d566eb470baeeb8f89d011ce8cf.png)
+![d4ed6d566eb470baeeb8f89d011ce8cf.png](https://raw.githubusercontent.com/mor88888888/writeups/main/plottedtms/_resources/d4ed6d566eb470baeeb8f89d011ce8cf.png)

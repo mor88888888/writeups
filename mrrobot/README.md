@@ -90,7 +90,8 @@ $ gobuster dir -u http://$ip -w /usr/share/wordlists/dirbuster/directory-list-2.
 ```
 
 It's slow too but we have some results in a few minutes:
-![701f7963111334ba6a720c55da66b81a.png](/THM/mrrobot/_resources/701f7963111334ba6a720c55da66b81a.png)
+
+![701f7963111334ba6a720c55da66b81a.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/701f7963111334ba6a720c55da66b81a.png)
 
 Interesting paths:
 ```
@@ -103,7 +104,7 @@ Interesting paths:
 
 # Explotation
 
-![7106b69f28f8332d7ee87466f7272a03.png](/THM/mrrobot/_resources/7106b69f28f8332d7ee87466f7272a03.png)
+![7106b69f28f8332d7ee87466f7272a03.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/7106b69f28f8332d7ee87466f7272a03.png)
 
 There is a path to a dicctionary hidden in the robots.txt
 
@@ -119,10 +120,12 @@ It takes too much time to finish, so asume the user that we need is it.
 
 Looking at the other interesting paths we have:
 Nothing in /readme
-![472dae3399f636a1c7c580ff536d4dbb.png](/THM/mrrobot/_resources/472dae3399f636a1c7c580ff536d4dbb.png)
+
+![472dae3399f636a1c7c580ff536d4dbb.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/472dae3399f636a1c7c580ff536d4dbb.png)
 
 But there is something in the /license path:
-![0d7c805c485083b98f3e5dfb6d6293a3.png](/THM/mrrobot/_resources/0d7c805c485083b98f3e5dfb6d6293a3.png)
+
+![0d7c805c485083b98f3e5dfb6d6293a3.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/0d7c805c485083b98f3e5dfb6d6293a3.png)
 
 ZWxsaW90OkVSMjgtMDY1Mgo=
 
@@ -130,24 +133,27 @@ elliot:ER28-0652
 
 This user:password works in the /wp-login.php
 
-![8125761235566f76a4815d4dd1c7e3ef.png](/THM/mrrobot/_resources/8125761235566f76a4815d4dd1c7e3ef.png)
+![8125761235566f76a4815d4dd1c7e3ef.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/8125761235566f76a4815d4dd1c7e3ef.png)
 
 ## Spawn a shell
 
 We are admins, so we need to modify some page that we can access and put a php reverse shell:
 
-![5679f8a5fdd16e8de45997ba1f557b98.png](/THM/mrrobot/_resources/5679f8a5fdd16e8de45997ba1f557b98.png)
+![5679f8a5fdd16e8de45997ba1f557b98.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/5679f8a5fdd16e8de45997ba1f557b98.png)
 
-![19d398a7345e850336470290947cbd21.png](/THM/mrrobot/_resources/19d398a7345e850336470290947cbd21.png)
+![19d398a7345e850336470290947cbd21.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/19d398a7345e850336470290947cbd21.png)
 
 http://10.10.58.91/wp-content/themes/twentyseventeen/404.php
-![b2f03ea0b49798c4e3341e5f5fec786d.png](/THM/mrrobot/_resources/b2f03ea0b49798c4e3341e5f5fec786d.png)
+
+![b2f03ea0b49798c4e3341e5f5fec786d.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/b2f03ea0b49798c4e3341e5f5fec786d.png)
 
 Put the reverse shell:
-![9bbfbf3a57b3f2e12b3476f93e43c1f3.png](/THM/mrrobot/_resources/9bbfbf3a57b3f2e12b3476f93e43c1f3.png)
+
+![9bbfbf3a57b3f2e12b3476f93e43c1f3.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/9bbfbf3a57b3f2e12b3476f93e43c1f3.png)
 
 And it's done:
-![cafc991c7ec529c40363cb0b3dae541d.png](/THM/mrrobot/_resources/cafc991c7ec529c40363cb0b3dae541d.png)
+
+![cafc991c7ec529c40363cb0b3dae541d.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/cafc991c7ec529c40363cb0b3dae541d.png)
 
 # Post-explotation
 
@@ -188,7 +194,7 @@ $ find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/nul
 
 https://gtfobins.github.io/gtfobins/nmap/
 
-![73b8a10ae6061b911a0e49c74653dcf2.png](/THM/mrrobot/_resources/73b8a10ae6061b911a0e49c74653dcf2.png)
+![73b8a10ae6061b911a0e49c74653dcf2.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/73b8a10ae6061b911a0e49c74653dcf2.png)
 
 **I think I forgot one step... I obtain two flags in a row**
 
@@ -196,17 +202,21 @@ https://gtfobins.github.io/gtfobins/nmap/
 Let's see how they want I reach the user flag:
 
 The flag is under robot user home:
-![ab2931532dcafa185e320e921c2858ae.png](/THM/mrrobot/_resources/ab2931532dcafa185e320e921c2858ae.png)
+
+![ab2931532dcafa185e320e921c2858ae.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/ab2931532dcafa185e320e921c2858ae.png)
 
 I don't have permissions to read it, but there is other file that I can read:
-![e8e56e9cbeae53f02c86e5d3cfb52cfe.png](/THM/mrrobot/_resources/e8e56e9cbeae53f02c86e5d3cfb52cfe.png)
+
+![e8e56e9cbeae53f02c86e5d3cfb52cfe.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/e8e56e9cbeae53f02c86e5d3cfb52cfe.png)
 
 robot:c3fcd3d76192e4007dfb496cca67e13b
 
 That seems an md5 hash, and it is:
-![87d310c27049882dd3a2582ebb3d5437.png](/THM/mrrobot/_resources/87d310c27049882dd3a2582ebb3d5437.png)
+
+![87d310c27049882dd3a2582ebb3d5437.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/87d310c27049882dd3a2582ebb3d5437.png)
 
 Lets use the credentials to login with the user robot and read the user flag witouth root:
-![6f74b03ff96c3ee3b47cc2ba314719b8.png](/THM/mrrobot/_resources/6f74b03ff96c3ee3b47cc2ba314719b8.png)
+
+![6f74b03ff96c3ee3b47cc2ba314719b8.png](https://raw.githubusercontent.com/mor88888888/writeups/main/mrrobot/_resources/6f74b03ff96c3ee3b47cc2ba314719b8.png)
 
 Done!
