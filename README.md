@@ -7,15 +7,15 @@ Public profiles:
 
 ## Easy
 
-* [gallery666](/writeups/main/gallery666)
-* [plottedtms](/writeups/main/plottedtms)
+* [gallery666](/writeups/gallery666)
+* [plottedtms](/writeups/plottedtms)
 
 ## Medium
 
-* [gatekeeper](/writeups/main/gatekeeper)
-* [mrrobot](/writeups/main/mrrobot)
+* [gatekeeper](/writeups/gatekeeper)
+* [mrrobot](/writeups/mrrobot)
 
 ## Hard
 
-* [retro](/writeups/main/retro)
-* [internal](/writeups/main/internal)
+* [retro](/writeups/retro)
+* [internal](/writeups/internal)
